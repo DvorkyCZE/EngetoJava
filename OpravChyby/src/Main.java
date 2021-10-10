@@ -1,7 +1,7 @@
 import java.math.BigDecimal;
 
 public class Main {
-
+    // Zkouska commitu pres IntelliJ
     // přidány uvozovky
     public static void ukol1() {
         System.out.println("Hello world!");
