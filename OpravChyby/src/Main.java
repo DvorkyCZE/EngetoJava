@@ -31,7 +31,7 @@ public class Main {
         System.out.println(cena);
         // Má vypsat "1.0". Ale vypíše "0.9999" !!!
     }
-    //
+    // změna hodnoty 0 na BigDecimal.Zero
     public static void ukol6() {
         BigDecimal cena = BigDecimal.ZERO;
         cena = cena.add(BigDecimal.valueOf(0.1));
