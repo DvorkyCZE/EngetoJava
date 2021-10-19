@@ -1,32 +1,46 @@
 package com.engeto;
-
+/**
+ * Třída Room
+ * slouží pro vytvoření pokojů(objektů) v hotelu
+*/
 public class Room {
-    int roomId;
-    int capacity;
-    boolean hasBalcony;
-    boolean hasViewOfTheSea;
-    int pricePerNight;
+    // Atributy:
+    private int roomId;
+    private int capacity;
+    private int pricePerNight;
+    private boolean hasBalcony;
+    private boolean hasViewOfTheSea;
 
-    public Room(int roomId, int capacity, boolean isBalcony, boolean isViewOfTheSea, int pricePerNight){
+    /*
+     * Konstruktory třídy Room
+     * Pro vytvoření pokoje je nutné zadat ID,kapacita pokoje a cena za noc
+     */
+    public Room(int roomId, int capacity, int pricePerNight, boolean hasBalcony, boolean hasViewOfTheSea){
         this.roomId = roomId;
         this.capacity = capacity;
-        this.hasBalcony = isBalcony;
-        this.hasViewOfTheSea = isViewOfTheSea;
         this.pricePerNight = pricePerNight;
+        this.hasBalcony = hasBalcony;
+        this.hasViewOfTheSea = hasViewOfTheSea;
     }
 
-    public void setRoomId(int roomId) {
-        this.roomId = roomId;
+    public Room(int roomId, int capacity, int pricePerNight, boolean hasBalcony){
+        this(roomId, capacity, pricePerNight, hasBalcony, true);
+    }
+
+    public Room(int roomId, int capacity, int pricePerNight){
+        this(roomId, capacity, pricePerNight, true, true);
     }
 
     public int getRoomId() {
         return roomId;
     }
+    public void setRoomId(int roomId) {
+        this.roomId = roomId;
+    }
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
-
     public int getCapacity() {
         return capacity;
     }
@@ -41,7 +55,6 @@ public class Room {
     public void setHasViewOfTheSea(boolean viewOfTheSea) {
         this.hasViewOfTheSea = viewOfTheSea;
     }
-
     public boolean isViewOfTheSea() {
         return hasViewOfTheSea;
     }
@@ -49,19 +62,12 @@ public class Room {
     public void setPricePerNight(int pricePerNight) {
         this.pricePerNight = pricePerNight;
     }
-
     public int getPricePerNight() {
         return pricePerNight;
     }
 
-    @Override
-    public String toString() {
-        return "Room{" +
-                "roomId=" + roomId +
-                ", capacity=" + capacity +
-                ", hasBalcony=" + hasBalcony +
-                ", hasViewOfTheSea=" + hasViewOfTheSea +
-                ", pricePerNight=" + pricePerNight +
-                '}';
+    public String getDescription(){
+        return "Pokoj č. "+roomId+", kapacita: "+capacity+" osoba/y , cena " +pricePerNight+" Kč/noc, balkón:"+hasBalcony+", výhled na moře:"+hasViewOfTheSea;
     }
+
 }

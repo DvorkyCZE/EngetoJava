@@ -38,7 +38,7 @@ public class Guest {
     }
 
     public String getDescription(){
-        return "Host: "+name+" "+surname+", narozen "+birthDate.toString();
+        return "Jméno: "+name+" "+surname+", datum narozeni: "+birthDate.toString();
     }
 
     public String getFullName(){
