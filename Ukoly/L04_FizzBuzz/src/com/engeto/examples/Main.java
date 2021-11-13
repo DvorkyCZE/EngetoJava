@@ -2,6 +2,8 @@ package com.engeto.examples;
 
 import java.util.Scanner;
 
+// zkouška commitu
+
 public class Main {
 
     public static void fizzBuzz(){
