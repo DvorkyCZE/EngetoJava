@@ -12,13 +12,13 @@ import java.util.List;
 public class Bookings {
     List<Booking> bookings = new ArrayList<>();
 
-    public void setBooking(Booking newBooking) {
+    public void addBooking(Booking newBooking) {
         bookings.add(newBooking);
     }
-//    public void printBookings(){
-//        for (Booking booking : bookings){
-//            System.out.println(booking.getDescription());
-//        }
-//    }
+    public void printBookings(){
+        for (Booking booking : bookings){
+            System.out.println(booking.getDescription());
+        }
+    }
 
 }

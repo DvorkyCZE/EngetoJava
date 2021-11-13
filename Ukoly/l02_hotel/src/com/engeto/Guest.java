@@ -42,7 +42,12 @@ public class Guest {
     }
 
     public String getFullName(){
-        return "Jméno hosta: "+getName()+" "+getSurname();
+        return getName()+" "+getSurname();
     }
 
+    // přidán override pro výpis z ArrayListu
+    @Override
+    public String toString() {
+        return "host: "+getName()+" "+getSurname();
+    }
 }

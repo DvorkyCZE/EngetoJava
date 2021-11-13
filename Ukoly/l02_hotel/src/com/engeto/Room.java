@@ -13,7 +13,7 @@ public class Room {
 
     /*
      * Konstruktory třídy Room
-     * Pro vytvoření pokoje je nutné zadat ID,kapacita pokoje a cena za noc
+     * Pro vytvoření pokoje je nutné zadat ID,kapacitu pokoje a cena za noc
      */
     public Room(int roomId, int capacity, int pricePerNight, boolean hasBalcony, boolean hasViewOfTheSea){
         this.roomId = roomId;
@@ -68,6 +68,12 @@ public class Room {
 
     public String getDescription(){
         return "Pokoj č. "+roomId+", kapacita: "+capacity+" osoba/y , cena " +pricePerNight+" Kč/noc, balkón:"+hasBalcony+", výhled na moře:"+hasViewOfTheSea;
+    }
+
+    // přidán override pro výpis z ArrayListu
+    @Override
+    public String toString() {
+        return " "+roomId;
     }
 
 }

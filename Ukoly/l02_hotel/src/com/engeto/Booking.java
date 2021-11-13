@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Booking {
     Guest mainGuest;
-    List<Guest> otherGuest = new ArrayList<>();
+    List<Guest> otherGuests = new ArrayList<>();
     Room room;
     LocalDate fromDate;
     LocalDate toDate;
@@ -23,6 +23,13 @@ public class Booking {
     }
     public Guest getMainGuest() {
         return mainGuest;
+    }
+
+    public void addGuest(Guest newGuest){
+        otherGuests.add(newGuest);
+    }
+    public void deleteGuest(Guest guest){
+        otherGuests.remove(guest);
     }
 
     public void setRoom(Room room) {
@@ -47,4 +54,16 @@ public class Booking {
     }
 
 
+    public String getDescription(){
+        String result = "Rezervace pokoje:\n "+mainGuest+", pokoj číslo: "+room+", od data: "+fromDate+", do data: "+toDate;
+        if (otherGuests.isEmpty()){
+            result += ", bez dalších hostů";
+        } else{
+                result +="\nDalší hosté: ";
+            for (Guest guest : otherGuests){
+                result += guest.getFullName() + ", ";}
+        }
+
+        return result;
+    }
 }
