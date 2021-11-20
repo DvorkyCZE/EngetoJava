@@ -7,6 +7,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+        String separator = System.getProperty("line.separator");
 
 	    // Create list of guests
         List<Guest> listOfGuests =  new ArrayList<>();
@@ -25,14 +26,14 @@ public class Main {
         listOfRooms.add(new Room(1,1,1000));
         listOfRooms.add(new Room(2,1,1000, false));
         listOfRooms.add(new Room(3,3,2400, false, false));
-        System.out.println("_________________________________");
+        System.out.println(separator);
         System.out.println("Výpis všech pokojů:");
 
         // for (Trida pomocnaPromenna : nazevListu) { operace }
         for (Room room : listOfRooms){
             System.out.println(room.getDescription());
         }
-        System.out.println("_________________________________");
+        System.out.println(separator);
         System.out.println("Výpis POUZE konkrétních pokojů:");
         System.out.println(listOfRooms.get(0).getDescription());
         System.out.println(listOfRooms.get(1).getDescription());
@@ -50,9 +51,13 @@ public class Main {
         booking1.addGuest(listOfGuests.get(2));
         bookings.addBooking(booking2);
 
+//Výpis jednotlivých objektů s rezervací
+        System.out.println(separator);
         System.out.println(booking.getDescription());
         System.out.println(booking1.getDescription());
         System.out.println(booking2.getDescription());
-//        bookings.printBookings();
+        System.out.println(separator);
+//Výpis všech objektů s rezervací uložených do ArrayListu
+        bookings.printBookings();
     }
 }
