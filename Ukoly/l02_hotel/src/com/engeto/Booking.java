@@ -10,12 +10,18 @@ public class Booking {
     Room room;
     LocalDate fromDate;
     LocalDate toDate;
+    ReservationType type;
 
-    public Booking(Guest mainGuest, Room room, LocalDate fromDate, LocalDate toDate){
+    public Booking(Guest mainGuest, Room room, LocalDate fromDate, LocalDate toDate, ReservationType type){
         this.mainGuest = mainGuest;
         this.room = room;
         this.fromDate = fromDate;
         this.toDate = toDate;
+        this.type =  type;
+    }
+
+    public Booking(Guest mainGuest, Room room) {
+        this(mainGuest, room, LocalDate.now(), LocalDate.now().plusDays(7), ReservationType.HOLIDAY);
     }
 
     public void setMainGuest(Guest mainGuest) {
@@ -55,7 +61,7 @@ public class Booking {
 
 
     public String getDescription(){
-        String result = "Rezervace pokoje:\n "+mainGuest+", pokoj číslo: "+room+", od data: "+fromDate+", do data: "+toDate;
+        String result = "Rezervace pokoje:\n"+mainGuest+", pokoj číslo: "+room+", od data: "+fromDate+", do data: "+toDate+", "+type+" pobyt";
         if (otherGuests.isEmpty()){
             result += ", bez dalších hostů";
         } else{

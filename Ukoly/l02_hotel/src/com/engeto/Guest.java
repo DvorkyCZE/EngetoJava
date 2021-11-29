@@ -48,6 +48,6 @@ public class Guest {
     // přidán override pro výpis z ArrayListu
     @Override
     public String toString() {
-        return "host: "+getName()+" "+getSurname();
+        return "Host: "+getName()+" "+getSurname();
     }
 }

@@ -39,17 +39,21 @@ public class Main {
         System.out.println(listOfRooms.get(1).getDescription());
 
         Bookings bookings = new Bookings();
-        Booking booking = new Booking(listOfGuests.get(0), listOfRooms.get(0),LocalDate.of(2021, 7, 19), LocalDate.of(2021, 7, 26));
+        Booking booking = new Booking(listOfGuests.get(0), listOfRooms.get(0),LocalDate.of(2021, 7, 19), LocalDate.of(2021, 7, 26),ReservationType.HOLIDAY);
         bookings.addBooking(booking);
 
-        Booking booking1 = new Booking(listOfGuests.get(0), listOfRooms.get(1),LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14));
+        Booking booking1 = new Booking(listOfGuests.get(0), listOfRooms.get(1),LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14),ReservationType.HOLIDAY);
         booking1.addGuest(listOfGuests.get(1));
         bookings.addBooking(booking1);
 
-        Booking booking2 = new Booking(listOfGuests.get(1), listOfRooms.get(2),LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14));
+        Booking booking2 = new Booking(listOfGuests.get(1), listOfRooms.get(2),LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14),ReservationType.WORK);
         booking2.addGuest(listOfGuests.get(0));
         booking1.addGuest(listOfGuests.get(2));
         bookings.addBooking(booking2);
+
+        Booking booking3 = new Booking(listOfGuests.get(1), listOfRooms.get(2));
+        booking1.addGuest(listOfGuests.get(2));
+        bookings.addBooking(booking3);
 
 //Výpis jednotlivých objektů s rezervací
         System.out.println(separator);
