@@ -48,11 +48,11 @@ public class Main {
 
         Booking booking2 = new Booking(listOfGuests.get(1), listOfRooms.get(2),LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14),ReservationType.WORK);
         booking2.addGuest(listOfGuests.get(0));
-        booking1.addGuest(listOfGuests.get(2));
+        booking2.addGuest(listOfGuests.get(2));
         bookings.addBooking(booking2);
 
         Booking booking3 = new Booking(listOfGuests.get(1), listOfRooms.get(2));
-        booking1.addGuest(listOfGuests.get(2));
+        booking3.addGuest(listOfGuests.get(2));
         bookings.addBooking(booking3);
 
 //Výpis jednotlivých objektů s rezervací
@@ -60,6 +60,7 @@ public class Main {
         System.out.println(booking.getDescription());
         System.out.println(booking1.getDescription());
         System.out.println(booking2.getDescription());
+        System.out.println(booking3.getDescription());
         System.out.println(separator);
 //Výpis všech objektů s rezervací uložených do ArrayListu
         bookings.printBookings();
